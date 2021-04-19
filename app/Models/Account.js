@@ -17,6 +17,7 @@ const Orm_1 = global[Symbol.for('ioc.use')]("Adonis/Lucid/Orm");
 const Hash_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Core/Hash"));
 const PasswordRecuperation_1 = __importDefault(require("./PasswordRecuperation"));
 const User_1 = __importDefault(require("./User"));
+const Product_1 = __importDefault(require("./Product"));
 class Account extends Orm_1.BaseModel {
     static async hashPassword(account) {
         if (account.$dirty.password) {
@@ -52,6 +53,10 @@ __decorate([
     Orm_1.hasMany(() => User_1.default),
     __metadata("design:type", Object)
 ], Account.prototype, "users", void 0);
+__decorate([
+    Orm_1.hasMany(() => Product_1.default),
+    __metadata("design:type", Object)
+], Account.prototype, "products", void 0);
 __decorate([
     Orm_1.hasOne(() => PasswordRecuperation_1.default),
     __metadata("design:type", Object)
